@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+	<!-- [Optional]
+	Uncomment if you want to defines the application's name 
+	
+	<preference>
+		<name>org.zkoss.zk.ui.WebApp.name</name>
+		<value>example</value>
+	</preference>
+	-->
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri>/</timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->
+	</device-config>
+	
+   <system-config>
+       <disable-event-thread>false</disable-event-thread>
+   </system-config>	
+   
+    <session-config>
+	  <timer-keep-alive>true</timer-keep-alive>
+	</session-config>   
+	
+
+   <!--  <error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>
+		
+		Sessions.getCurrent().invalidate();
+        Executions.getCurrent().sendRedirect("/","_self");
+        </location>
+	</error-page>    -->
+    
+	<library-property>
+		<name>org.zkoss.zkmax.tablet.ui.disabled</name>
+		<value>true</value>
+	</library-property>
+</zk>
