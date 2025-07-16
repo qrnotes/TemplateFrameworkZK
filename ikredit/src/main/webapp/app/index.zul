@@ -1,0 +1,58 @@
+<?page id="mnutama" title="Star Inc"?>
+<?link rel="shortcut icon" type="image/x-icon" href="images/favorite.png"?>
+<?link rel="icon" type="image/x-icon" href="images/favorite.png"?>
+
+<!-- Load Bootstrap  -->
+<?link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"?>
+
+
+
+<!-- Google Open Sans font -->
+<!-- Load fonts from local -->
+<?link href="css/fonts.css" rel="stylesheet" type="text/css"?>
+
+<?link href="less/index.css.dsp" rel="stylesheet" type="text/css"?>
+
+<zk xmlns:n="native">
+<zscript><![CDATA[
+  
+
+]]>
+</zscript>
+
+	<include src="navbar.zul"/>             
+	<hlayout id="main" spacing="0">
+		<include src="sidebar.zul"/>    
+		
+		<vlayout spacing="0" hflex="1">
+			<div sclass="breadcrumbs">
+				<div sclass="breadcrumb">
+					<span sclass="home-icon z-icon-home"/>
+					<a label="Home"  href="#"  onClick="pilihMenuHome()" />
+					<label value="DASHBOARD" id="dashid" />
+					<a id="ketdash" label="Overview &amp; Start" iconSclass="z-icon-angle-double-right" sclass="subtitle"/>    
+				</div>
+			</div>	
+		</vlayout>
+	</hlayout>
+
+
+
+<!-- Script  -->
+<zscript><![CDATA[
+        void pilihMenuHome(){
+         	ketdash.setLabel("Overview & Start");
+        	dashid.setValue("DASHBOARD");
+        }        
+                          
+        void doLogout(){
+        	Sessions.getCurrent().invalidate();
+        	Executions.getCurrent().sendRedirect("/","_self");
+        }
+   
+
+    ]]>
+</zscript>
+
+</zk>
+
